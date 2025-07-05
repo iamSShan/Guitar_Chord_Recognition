@@ -13,6 +13,10 @@ A deep learning project that recognizes guitar chords using hand gestures captur
 - Use a webcam to predict chords in real time
 - Fetch and display chord-related information using GPT-4o API
 
+## 🎬 Live Demo
+
+![Demo](data_prep/demo/chords_demo.gif)
+
 ---
 
 
@@ -84,10 +88,27 @@ def get_chord_info(chord_label: str) -> str:
 ```
 If you don't have OpenAI key, you can comment out use of it, it will still detect chords 
 
-## 🤖 Model Architecture
+## 🤖 CNN Model Architecture
 
-<pre> ```text Input: (200x200 grayscale image) ↓ Conv2D → MaxPooling ↓ Conv2D → MaxPooling ↓ Flatten → Dense(1024) → Dropout(0.6) ↓ Output: Softmax layer with N chord classes ``` </pre>
-
+```
+Input: (200x200 grayscale image)
+    ↓
+Conv2D
+    ↓
+MaxPooling
+    ↓
+Conv2D
+    ↓
+MaxPooling
+    ↓
+Flatten
+    ↓
+Dense(1024)
+    ↓
+Dropout(0.6)
+    ↓
+Output: Softmax layer with N chord classes
+```
 
 ## ✅ Example Chords
 For now, I have trained and detected the following chords:
@@ -117,5 +138,5 @@ Model evaluation includes:
 ## 📝 License
 MIT License. Feel free to use and extend.
 
-## 💬 Credits
+## 🚀 Powered By
 Created with 🧠 CNN + 🎥 OpenCV + 🖐️ MediaPipe + 🤖 GPT-4o + ❤️ for Guitars
